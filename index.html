@@ -11,13 +11,22 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <script src="https://kit.fontawesome.com/9a6d22a7b7.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css" />
     <title>Shopping List</title>
   </head>
   <body>
+    <!-- modal -->
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <h2>Warning! This will clear all items from your list.</h2>
+          <button id="cancel">Cancel</button>
+          <button id="clear-all">Clear All</button>
+      </div>
+    </div>
     <div class="container">
       <header>
-        <img src="images/note.png" alt="" />
+        <i class="fa-regular fa-clipboard-list"></i>
         <h1>Shopping List</h1>
       </header>
       <form id="item-form">
@@ -46,40 +55,9 @@
         />
       </div>
 
-      <ul id="item-list" class="items">
-        <!-- <li>
-          Apples
-          <button class="remove-item btn-link text-red">
-            <i class="fa-sharp fa-solid fa-circle-minus"></i>
-          </button>
-        </li>
-        <li>
-          Orange Juice
-          <button class="remove-item btn-link text-red">
-            <i class="fa-sharp fa-solid fa-circle-minus"></i>
-          </button>
-        </li>
-        <li>
-          Eggs
-          <button class="remove-item btn-link text-red">
-            <i class="fa-sharp fa-solid fa-circle-minus"></i>
-          </button>
-        </li>
-        <li>
-          Milk
-          <button class="remove-item btn-link text-red">
-            <i class="fa-sharp fa-solid fa-circle-minus"></i>
-          </button>
-        </li>
-        <li>
-          Eggnog
-          <button class="remove-item btn-link text-red">
-            <i class="fa-sharp fa-solid fa-circle-minus"></i>
-          </button>
-        </li> -->
-      </ul>
+      <ul id="item-list" class="items"></ul>
 
-      <button id="clear" class="btn-clear">Clear All</button>
+      <button id="modal-trigger" class="btn-clear">Clear All <i class="fa-light fa-trash-can"></i></button>
     </div>
 
     <script src="script.js"></script>

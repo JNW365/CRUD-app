@@ -2,10 +2,25 @@
 const itemForm = document.getElementById('item-form');
 const itemInput = document.getElementById('item-input');
 const itemList = document.getElementById('item-list');
-const clearBtn = document.getElementById('clear');
+const clearBtn = document.getElementById('modal-trigger');
 const itemFilter = document.getElementById('filter');
 const formBtn = itemForm.querySelector('button');
+const modal = document.getElementById('myModal');
+const modalClose = document.getElementById('cancel');
+const clearAll = document.getElementById('clear-all')
 let isEditMode = false;
+
+// Functions for modal
+
+// Open modal
+let openModal = () => {
+    modal.style.visibility = 'visible';
+}
+// Close modal
+let closeModal = () => {
+    modal.style.visibility = 'hidden';
+}
+
 
 // Function to display items
 let displayItems = () => {
@@ -89,7 +104,7 @@ let onAddItemSubmit = (e) => {
 let createButton = (classes) => {
     const button = document.createElement('button');
     button.className = classes;
-    const icon = createIcon('fa-sharp fa-solid fa-circle-minus');
+    const icon = createIcon('fa-regular fa-square-minus');
     button.appendChild(icon);
     return button;
 }
@@ -127,18 +142,18 @@ let setItemToEdit = (item) => {
     formBtn.innerHTML = '<i class="fa-solid fa-pencil"></i> Update Item';
     formBtn.style.backgroundColor = '#228B22';
     itemInput.value = item.textContent;
+    
 }
 
 // Function to remove item
 
 let removeItem = (item) => {
-  if(confirm('Are you sure?')) {
     // Remove item from DOM
     item.remove();
     // Remove item from storage
     removeItemFromStorage(item.textContent)
     checkUI()
-  } 
+   
 }
 // Function to remove item from storage
 let removeItemFromStorage = (item) => {
@@ -201,9 +216,13 @@ let init = () => {
     // Event Listeners
 itemForm.addEventListener('submit', onAddItemSubmit);
 itemList.addEventListener('click', onClickItem);
-clearBtn.addEventListener('click', clearItems);
+clearBtn.addEventListener('click', openModal);
+modalClose.addEventListener('click', closeModal)
 itemFilter.addEventListener('input', filterItems);
+clearAll.addEventListener('click', clearItems);
+clearAll.addEventListener('click', closeModal);
 document.addEventListener('DOMContentLoaded', displayItems);
+
 checkUI();
 }
 

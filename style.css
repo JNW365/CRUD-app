@@ -18,7 +18,7 @@ body {
 
 header {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   margin-bottom: 20px;
 }
@@ -27,14 +27,60 @@ header h1 {
   font-weight: 300;
   margin-left: 10px;
 }
+.fa-clipboard-list {
+  font-size: 2rem;
+}
 .edit-mode {
-  /* background-color: #413F42; */
+  outline: 2px solid #228B22;
   color: #7F8487;
 }
 .container {
   max-width: 500px;
   margin: 30px auto;
   padding: 20px;
+  outline: 3px solid #ccc;
+  border-radius: 8px;
+}
+/* Modal */
+.modal {
+  visibility: hidden;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.3);
+}
+.modal-content {
+  background-color: white;
+  margin: 25% auto;
+  padding: 2rem;
+  width: 80%;
+  text-align: center;
+  font-family: arial, sans-serif;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 8px;
+}
+.modal-content button {
+  width: 50%;
+  margin: .5rem 0;
+  padding: .5rem 0;
+  font-size: 1.15rem;
+  border: none;
+  border-radius: 8px;
+}
+#cancel {
+  background-color: #333;
+  color: white;
+}
+#clear-all {
+  background-color: red;
+  color: white
 }
 
 /* Form & Input */
@@ -74,6 +120,7 @@ header h1 {
   background-color: #444;
 }
 
+
 .btn-link {
   font-size: 16px;
   background-color: transparent;
@@ -89,10 +136,14 @@ header h1 {
   font-size: 16px;
   background-color: transparent;
   color: #333;
-  border: 1px solid #ccc;
+  border: 1px solid #333;
   border-radius: 5px;
   padding: 10px 20px;
   cursor: pointer;
+}
+.fa-trash-can {
+  margin-left: 1rem;
+  font-size: 1.25rem;
 }
 
 .btn-clear:hover {
@@ -101,7 +152,8 @@ header h1 {
 
 .text-red {
   color: red;
-  font-size: 1.15rem;
+  font-size: 1.35rem;
+  
 }
 
 /* Items */
@@ -118,13 +170,17 @@ header h1 {
   width: 45%;
   border: 1px solid #ccc;
   border-radius: 5px;
-  padding: 10px 15px;
+  padding: 10px 5px;
   margin: 0 5px 20px;
   font-weight: 700;
 }
 
+
 @media (max-width: 500px) {
   .items li {
     width: 100%;
+  }
+  .container {
+    margin: 20% 1rem;
   }
 }
