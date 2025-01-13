@@ -207,7 +207,7 @@ let checkUI = () => {
         itemFilter.style.display = 'block'; 
     }
     formBtn.innerHTML = '<i class="fa-solid fa-plus"></i> Add Item';
-    formBtn.style.backgroundColor = '#333';
+    formBtn.style.backgroundColor = '#16404D';
     isEditMode = false;
 }
 
