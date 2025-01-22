@@ -46,7 +46,7 @@ header h1 {
   padding: 20px;
   outline: 3px solid #16404D;
   border-radius: 8px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),  url('../images/ka-t-a2tqgBjRUGI-unsplash.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),  url('images/ka-t-a2tqgBjRUGI-unsplash.jpg');
   background-size: cover;
 }
 /* Modal */
