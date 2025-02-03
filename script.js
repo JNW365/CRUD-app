@@ -140,7 +140,7 @@ let setItemToEdit = (item) => {
 
     item.classList.add('edit-mode');
     formBtn.innerHTML = '<i class="fa-solid fa-pencil"></i> Update Item';
-    formBtn.style.backgroundColor = '#228B22';
+    formBtn.style.backgroundColor = '#77B254';
     itemInput.value = item.textContent;
     
 }
@@ -207,7 +207,7 @@ let checkUI = () => {
         itemFilter.style.display = 'block'; 
     }
     formBtn.innerHTML = '<i class="fa-solid fa-plus"></i> Add Item';
-    formBtn.style.backgroundColor = '#16404D';
+    formBtn.style.backgroundColor = 'white';
     isEditMode = false;
 }
 
